@@ -17,3 +17,19 @@ SLEEP/WAKE* line), and five signal wires to J14 are required. See [docs/WIRING.m
 
 Hold BOOTSEL while plugging in the RP2040, then copy
 `.pio/build/pico/firmware.uf2` to the mass-storage device that appears.
+
+## Host Companion
+
+    uv pip install -e "tools/[dev]"
+    sudo cp udev/99-tegra-rcm-console.rules /etc/udev/rules.d/
+    sudo udevadm control --reload-rules && sudo udevadm trigger
+
+## Usage
+
+    tegra-rcm-console power on|off|cycle       # power control
+    tegra-rcm-console serial [--log FILE]      # serial console (raw pipe)
+    tegra-rcm-console flash IMAGE.tegraflash-tar.zst [--usb-instance BUS:PORT] [--log FILE]
+    tegra-rcm-console --id ID <command>        # pick one of several appliances
+
+See [docs/PROTOCOL.md](docs/PROTOCOL.md) for the wire protocol and
+[docs/TESTING.md](docs/TESTING.md) for Yocto/oeqa integration.
