@@ -8,7 +8,7 @@ from pathlib import Path
 from .board import Board, BoardError
 from .flash import ArtifactError, FlashError, TegraflashArtifact, flash
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 DESCRIPTION = "Control a Jetson Orin Nano Devkit over USB: recovery, power, serial, flashing."
 
 

@@ -42,10 +42,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - name: Install dependencies
-        run: pip install pyserial pytest ruff
-      - name: Install package
-        run: pip install .
+      - name: Install
+        run: pip install -e ".[dev]"
         working-directory: tools
       - name: Lint
         run: ruff check

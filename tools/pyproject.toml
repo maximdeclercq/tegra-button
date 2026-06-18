@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tegra-button"
-version = "1.0.0"
-description = "USB appliance CLI for Jetson Orin Nano/NX Devkit recovery, console, and flashing"
-requires-python = ">=3.9"
+version = "0.1.0"
+description = "Control a Jetson Orin Nano Devkit over USB (flash, power, serial)"
+requires-python = ">=3.11"
 dependencies = ["pyserial>=3.5"]
 
 [project.optional-dependencies]
